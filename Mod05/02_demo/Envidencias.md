@@ -2,7 +2,7 @@
 
 In this Demo, you will learn how to create a virtual machine by using PowerShell.
 
-#### Create the virtual machine
+#### A- Create the virtual machine
 
 1. Launch the [Cloud Shell](https://shell.azure.com/), or open a local PowerShell window.
 
@@ -35,7 +35,7 @@ In this Demo, you will learn how to create a virtual machine by using PowerShell
 
    It will take a few minutes for the VM to be created.
 
-#### Verify the machine creation in the portal
+#### B - Verify the machine creation in the portal
 
 1. Access the portal and view your virtual machines.
 2. Verify the new VM was created.
@@ -44,7 +44,7 @@ In this Demo, you will learn how to create a virtual machine by using PowerShell
    - Select **Connect**.
    - Launch Remote Desktop connect to the VM with the IP address and port information displayed.
 
-#### Clean up resources
+#### C - Clean up resources
 
 When no longer needed, you can delete the resource group, virtual machine, and all related resources. Replace <myResourceGroup> with the name you used earlier, or you can delete it through the portal.
 

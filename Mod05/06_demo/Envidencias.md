@@ -15,7 +15,7 @@ In this demo, you will learn to perform the following actions:
 
 ✔️ **Note:** The sample web app used in this demo implements a web API for a hotel reservations web site. The web API exposes HTTP POST and GET operations that create and retrieve customer's bookings. The data is not persisted and queries return sample data.
 
-#### Create a Dockerfile for the web app
+#### A - Create a Dockerfile for the web app
 
 1. In a command prompt on your local computer, create a folder for the project and then run the following command to download the source code for the web app.
 
@@ -82,7 +82,7 @@ In this demo, you will learn to perform the following actions:
 
 1. Save the file and close your text editor.
 
-#### Build and deploy the image using the Dockerfile
+#### B - Build and deploy the image using the Dockerfile
 
 1. At the command prompt, run the following command to build the image for the sample app using the Dockerfile and store it locally. Don't forget the . at the end of the command.
 
@@ -108,7 +108,7 @@ In this demo, you will learn to perform the following actions:
 
    The image will have the name reservationsystem. You'll also see an image named *microsoft/dotnet*. This image contains the .NET Core SDK and was downloaded when the reservationsystem image was built using the Dockerfile.
 
-#### Test the web app
+#### C - Test the web app
 
 1. Run a container using the reservationsystem image using the following command. Docker will respond with a lengthy string of hex digits – the container runs in the background without any UI. Port 80 in the container is mapped to port 8080 on the host machine. The container is named reservations.
 

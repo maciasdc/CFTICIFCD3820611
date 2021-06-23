@@ -20,7 +20,7 @@ Follow these steps to install the Resource Manager Tools extension:
 3. Search for **Azure Resource Manager Tools**, and then select **Install**.
 4. Select **Reload** to finish the extension installation.
 
-#### Open the Quickstart template
+#### A- Open the Quickstart template
 
 1. From Visual Studio Code, select **File > Open File**.
 
@@ -34,7 +34,7 @@ Follow these steps to install the Resource Manager Tools extension:
 
 3. Select **File > Save As** to save the file as *azuredeploy.json* to your local computer.
 
-#### Edit the template
+#### B - Edit the template
 
 Add one more element into the outputs section to show the storage URI.
 
@@ -70,7 +70,7 @@ Add one more element into the outputs section to show the storage URI.
 
 2. Select **File>Save** to save the file.
 
-#### Deploy the template
+#### C - Deploy the template
 
 There are many methods for deploying templates, you will be using the Azure Cloud shell.
 
@@ -96,7 +96,7 @@ There are many methods for deploying templates, you will be using the Azure Clou
 
 1. The storage account name and the storage URL in the outputs section are highlighted on the screenshot.
 
-#### Clean up resources
+#### D - Clean up resources
 
 When the Azure resources are no longer needed, clean up the resources you deployed by deleting the resource group
 

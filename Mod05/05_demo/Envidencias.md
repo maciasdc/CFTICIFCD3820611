@@ -11,7 +11,7 @@ In this demo, you will learn to perform the following actions:
 - You'll need a local installation of Docker
   - https://www.docker.com/products/docker-desktop
 
-#### Retrieve and run sample app from Docker Hub
+#### A - Retrieve and run sample app from Docker Hub
 
 1. Open a command prompt on your local computer
 
@@ -49,7 +49,7 @@ In this demo, you will learn to perform the following actions:
 
 5. Open a web browser and go to the page for the sample web app at [http://localhost:8080](http://localhost:8080/).
 
-#### Examine the container in the local Docker registry
+#### B - Examine the container in the local Docker registry
 
 1. At the command prompt, view the running containers in the local registry.
 
@@ -103,7 +103,7 @@ In this demo, you will learn to perform the following actions:
 
 4. Return to the web browser and refresh the page for the sample web app. It should fail with a *Connection Refused* error.
 
-#### Remove the container and image
+#### C - Remove the container and image
 
 1. Although the container has stopped, it's still loaded and can be restarted. Remove it using the following command. As before, replace <NAME> with the name of your container.
 

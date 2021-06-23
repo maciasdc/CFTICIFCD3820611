@@ -19,7 +19,7 @@ This demo is performed in either the Cloud Shell or a local Azure CLI installati
    - Launch the Cloud Shell: [https://shell.azure.com](https://shell.azure.com/)
    - Or, open a terminal and login to your Azure account using the az login command.
 
-#### Create a Key Vault
+#### A - Create a Key Vault
 
 1. Set variables. Let's set some variables for the CLI commands to use to reduce the amount of retyping. Replace the <myLocation> variable string below with a region that makes sense for you. The Key Vault name needs to be a globally unique name, and the script below generates a random string.
 
@@ -33,7 +33,7 @@ This demo is performed in either the Cloud Shell or a local Azure CLI installati
 
    
 
-2. Create a resource group.
+2. Create a resource group. 
 
    
 
@@ -55,7 +55,7 @@ This demo is performed in either the Cloud Shell or a local Azure CLI installati
 
    ✔️ **Note:** This can take a few minutes to run.
 
-#### Add and retrieve a secret
+#### B - Add and retrieve a secret
 
 To add a secret to the vault, you just need to take a couple of additional steps.
 
@@ -91,7 +91,7 @@ To add a secret to the vault, you just need to take a couple of additional steps
 
 You have created a Key Vault, stored a secret, and retrieved it.
 
-#### Clean up resources
+#### C - Clean up resources
 
 When you no longer need the resources in this demo use the following command to delete the resource group and associated Key Vault.
 

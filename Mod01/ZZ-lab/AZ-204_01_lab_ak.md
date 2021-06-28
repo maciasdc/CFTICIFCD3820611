@@ -7,6 +7,9 @@ lab:
     type: 'Answer Key'
 ---
 
+![01-00](architecture_01.png)
+
+
 # Lab 01: Building a web application on Azure platform as a service offerings
 # Student lab answer key
 
@@ -55,7 +58,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.  Enter the password for your Microsoft account, and then select **Sign in**.
 
     > **Note**: If this is your first time signing in to the Azure portal, a dialog box will display offering a tour of the portal. Select **Get Started** to skip the tour and begin using the portal.
-
+	
+	
 #### Task 2: Create a Storage account
 
 1.  In the Azure portal's navigation pane, select **All services**.
@@ -92,6 +96,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  Select **Create** to create the storage account by using your specified configuration.
 
+![01-02](../../Evidencias/mod01/MOD1_EXER1_TASK2_08.png)
+
+
 1.  From the **Deployment** blade, wait for the creation task to complete before moving forward with this lab.
 
 1.	Select the **Go to resource** button from the **Deployment** blade to go to the newly created storage account.
@@ -99,6 +106,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.	From the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
 
 1.	From the **Access keys** blade, select any one of the keys, and then record the value of either of the **Connection string** boxes. You'll use this value later in this lab.
+
+![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK2_11.png)
+
 
     > **Note**: It doesn't matter which connection string you choose. They are interchangeable.
 
@@ -131,6 +141,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1.  In the **File Explorer** window, browse to **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\Images**, select the **grilledcheese.jpg** file, and then select **Open**.
 
     1.  Ensure that the **Overwrite if files already exist** check box is selected, and then select **Upload**. Wait for the blob to upload before you continue with this lab.
+	
+	![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK3_09.png)
 
 #### Task 4: Create a web app
 
@@ -180,6 +192,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  Select **Create** to create the web app by using your specified configuration. Wait for the creation task to complete before you move forward with this lab.
 
+![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK4_10.png)
+
+
 #### Task 5: Configure the web app
 
 1.  In the Azure portal's navigation pane, select **Resource groups**.
@@ -203,7 +218,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1.  Select **Save** from the blade to persist your settings.
   
     Wait for your application settings to persist before you move forward with the lab.
-
+	
+	![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK5_05.png)
+	
 1.  From the **Web App** blade in the **Settings** section, select the **Properties** link.
 
 1.  In the **Properties** section, copy the value of the **URL** text box. You'll use this value later in the lab.
@@ -226,7 +243,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  In the **ImagesController** class on line 55, observe the **Post** method and the code used to persist an uploaded image to  Storage.
 
+
+![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK6_08.png)
+
+
 1.  On the taskbar, select the **Windows Terminal** icon.
+
+![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK6_11.png)
 
 1.  At the open command prompt, enter the following command, and then select Enter to sign in to the Azure Command-Line Interface (CLI):
 
@@ -273,7 +296,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
 
     > **Note**: Replace the *\<name-of-your-api-app\>* placeholder with the name of the web app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
-  
+	
+	![01-00](../../Evidencias/mod01/MOD1_EXER1_TASK6_12.png)
+
   	Wait for the deployment to complete before you move forward with this lab.
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
@@ -283,6 +308,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1.	From the **ManagedPlatform** blade, select the **imgapi*[yourname]*** web app that you created earlier in this lab.
 
 1.	From the **Web App** blade, select **Browse**.
+
 
 1.	Perform a GET request to the root of the website, and then observe the JavaScript Object Notation (JSON) array that's returned. This array should contain the URL for your single uploaded image in your Storage account.
 
@@ -340,6 +366,8 @@ In this exercise, you created a web app in Azure and then deployed your ASP.NET 
 
 1.  From the **Review + Create** tab, review the options that you selected during the previous steps.
 
+![01-00](../../Evidencias/mod01/MOD1_EXER2_TASK1_09.png)
+
 1.  Select **Create** to create the web app by using your specified configuration. Wait for the creation task to complete before you move forward with this lab.
 
 #### Task 2: Configure a web app
@@ -367,7 +395,9 @@ In this exercise, you created a web app in Azure and then deployed your ASP.NET 
     1.  Select **OK** to close the pop-up dialog, and then return to the **Configuration** section.
     
     1.  Select **Save** from the blade to persist your settings.
-  
+
+  ![01-00](../../Evidencias/mod01/MOD1_EXER2_TASK2_05.png)
+
     Wait for your application settings to persist before you move forward with the lab.
 
 #### Task 3: Deploy an ASP.NET web application to Web Apps
@@ -406,6 +436,9 @@ In this exercise, you created a web app in Azure and then deployed your ASP.NET 
     az webapp list --resource-group ManagedPlatform
     ```
 
+![01-00](../../Evidencias/mod01/MOD1_EXER2_TASK3_11.png)
+
+
 1.	Enter the following command, and then select Enter to find the apps that have the **imgweb\*** prefix:
 
     ```
@@ -430,9 +463,11 @@ In this exercise, you created a web app in Azure and then deployed your ASP.NET 
     az webapp deployment source config-zip --resource-group ManagedPlatform --src web.zip --name <name-of-your-web-app>
     ```
 
+​	
+
     > **Note**: Replace the *\<name-of-your-web-app\>* placeholder with the name of the web app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
-  
-  	Wait for the deployment to complete before you move forward with this lab.
+      
+    Wait for the deployment to complete before you move forward with this lab.
 
 1.	In the Azure portal's navigation pane, select **Resource groups**.
 
@@ -451,10 +486,15 @@ In this exercise, you created a web app in Azure and then deployed your ASP.NET 
     1.  In the **File Explorer** window, browse to **Allfiles (F):\\Allfiles\\Labs\\01\\Starter\\Images**, select the **bahnmi.jpg** file, and then select **Open**.
     
     1.  Select **Upload**.
+	
+	![01-00](../../Evidencias/mod01/MOD1_EXER2_TASK3_15_21png.png)
 
-1.	Observe that the list of gallery images has updated with your new image.
+1. Observe that the list of gallery images has updated with your new image.
+   
+   
+   ![01-00](../../Evidencias/mod01/MOD1_EXER2_TASK3_15_22.png)
 
-    > **Note**: In some rare cases, you might need to refresh your browser window to retrieve the new image.
+   > **Note**: In some rare cases, you might need to refresh your browser window to retrieve the new image.
 
 1.	Return to your browser window with the Azure portal.
 

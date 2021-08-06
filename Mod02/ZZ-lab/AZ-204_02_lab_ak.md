@@ -7,6 +7,8 @@ lab:
     type: 'Answer Key'
 ---
 
+![01-00](mod02.png)
+
 # Lab 02: Implement task processing logic by using Azure Functions
 # Student lab answer key
 
@@ -46,6 +48,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. In the open browser window, go to the Azure portal (<https://portal.azure.com>).
 1. Enter the email address for your Microsoft account, and then select **Next**.
 1. Enter the password for your Microsoft account, and then select **Sign in**.
+    
     > **Note**: If this is your first time signing in to the Azure portal, you'll be offered a tour of the portal. If you prefer to skip the tour, select **Get Started** to begin using the portal.
 
 #### Task 2: Create an Azure Storage account
@@ -55,6 +58,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. On the **Storage accounts** blade, get your list of storage account instances.
 1. On the **Storage accounts** blade, select **New**.
 1. On the **Create storage account** blade, observe the tabs on the blade, such as **Basics**, **Tags**, and **Review + Create**.
+    
     > **Note**: Each tab represents a step in the workflow to create a new storage account. You can select **Review + Create** at any time to skip the remaining tabs.
 1. Select the **Basics** tab, and then in the tab area, perform the following actions:
     1. Leave the **Subscription** text box set to its default value.
@@ -65,8 +69,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the **Account kind** list, select **StorageV2 (general purpose v2)**.
     1. In the **Replication** list, select **Locally-redundant storage (LRS)**.
     1. Select **Review + Create**.
+	![01-02](../../Evidencias/mod02/MOD2_EXER1_TASK2_07.png)	
+	
 1. On the **Review + Create** tab, review the options that you specified in the previous steps.
 1. Select **Create** to create the storage account by using your specified configuration.
+    
     > **Note**: On the **Deployment** blade, wait for the creation task to complete before moving forward with this lab.
 1. In the Azure portal's navigation pane, select **All services**.
 1. On the **All services** blade, select **Storage Accounts**.
@@ -74,6 +81,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. From the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
 1. From the **Access keys** blade, select any one of the keys, and then record the value of either of the **Connection string** boxes.
     > **Note**: You'll use this value later in the lab. It doesn't matter which connection string you choose. They are interchangeable.
+	![01-02](../../Evidencias/mod02/MOD2_EXER1_TASK2_13.png)
 
 #### Task 3: Create a Function app
 
@@ -83,6 +91,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. On the **Everything** search results blade, select the **Function App** result.
 1. On the **Function App** blade, select **Create**.
 1. Find the tabs on the **Function App** blade, such as **Basics**.
+    
     > **Note**: Each tab represents a step in the workflow to create a new function app. You can select **Review + Create** at any time to skip the remaining tabs.
 1. On the **Basics** tab, perform the following actions:
     1. Leave the **Subscription** text box set to its default value.
@@ -100,9 +109,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. Select **Review + Create**.
 1. On the **Review + Create** tab, review the options that you selected during the previous steps.
 1. Select **Create** to create the function app by using your specified configuration.
+    
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 > **Review**: In this exercise, you created all the resources that you'll use for this lab.
+
+![01-02](../../Evidencias/mod02/MOD2_EXER1_TASK3.png)
+![01-02](../../Evidencias/mod02/MOD2_EXER1_TASK3b.png)
 
 ### Exercise 2: Configure a local Azure Functions project
 
@@ -124,6 +137,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     > **Note**: You can review the documentation to [create a new project][azure-functions-core-tools-new-project] using the **Azure Functions Core Tools**.
 1. Close the currently running **Windows Terminal** application.
 
+![01-02](../../Evidencias/mod02/MOD2_EXER2_TASK1_03.png)
+![01-02](../../Evidencias/mod02/MOD2_EXER2_TASK1_03b.png)
+
 #### Task 2: Configure connection string
 
 1. On the **Start** screen, select the **Visual Studio Code** tile.
@@ -137,6 +153,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
 
 1. Update the value of the **AzureWebJobsStorage** by setting it to the **connection string** of the storage account that you recorded earlier in this lab.
+
+![01-02](../../Evidencias/mod02/MOD2_EXER2_TASK2_06.png)
 
 #### Task 3: Build and validate a project
 
@@ -154,6 +172,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
 
 > **Review**: In this exercise, you created a local project that you'll use for Azure Functions development.
+
+![01-02](../../Evidencias/mod02/MOD2_EXER2_TASK3_03.png)
 
 ### Exercise 3: Create a function that's triggered by an HTTP request
 
@@ -174,6 +194,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: You can review the documentation to [create a new function][azure-functions-core-tools-new-function] using the **Azure Functions Core Tools**.
 1. Close the currently running **Windows Terminal** application.
+
+![01-02](../../Evidencias/mod02/MOD2_EXER3_TASK1_00.png)
 
 #### Task 2: Write HTTP-triggered function code
 
@@ -332,6 +354,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1. Select **Save** to save your changes to the **Echo.cs** file.
 
+![01-02](../../Evidencias/mod02/MOD2_EXER3_TASK2_17.png)
+![01-02](../../Evidencias/mod02/MOD2_EXER3_TASK2_17b.png)
+
 #### Task 3: Test the HTTP-triggered function by using httprepl
 
 1. On the taskbar, select the **Windows Terminal** icon.
@@ -399,6 +424,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
 
 1. Close all currently running instances of the **Windows Terminal** application.
+![01-02](../../Evidencias/mod02/MOD2_EXER3_TASK3_05.png)
+
+
+
 
 > **Review**: In this exercise, you created a basic function that echoes the content sent via an HTTP POST request.
 
@@ -422,6 +451,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     > **Note**: You can review the documentation to [create a new function][azure-functions-core-tools-new-function] using the **Azure Functions Core Tools**.
 1. Close the currently running **Windows Terminal** application.
 
+![01-02](../../Evidencias/mod02/MOD2_EXER3_TASK5_05.png)
 #### Task 2: Observe function code
 
 1. On the **Start** screen, select the **Visual Studio Code** tile.
@@ -435,7 +465,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     using Microsoft.Azure.WebJobs;
     using Microsoft.Azure.WebJobs.Host;
     using Microsoft.Extensions.Logging;
-
+    
     namespace func
     {
         public static class Recurring
@@ -468,6 +498,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. Observe the function run that occurs about every five minutes. Each function run should render a simple message to the log.
 1. Close the currently running **Windows Terminal** application.
 
+![01-02](../../Evidencias/mod02/MOD2_EXER4_TASK3_03.png)
+
 #### Task 4: Update the function integration configuration
 
 1. On the **Start** screen, select the **Visual Studio Code** tile.
@@ -489,6 +521,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     ```
 
 1. Select **Save** to save your changes to the **Recurring.cs** file.
+
+![01-02](../../Evidencias/mod02/MOD2_EXER4_TASK4_06.png)
 
 #### Task 5: Observe function runs
 
@@ -524,6 +558,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the **Name** text box, enter **content**.
     1. In the **Public access level** drop-down list, select **Private (no anonymous access)**.
     1. Select **OK**.
+    
+      ![01-02](../../Evidencias/mod02/MOD2_EXER5_TASK1_06.png)
 1. Return to the **Containers** section, and then select the recently created **content** container.
 1. On the **Container** blade, select **Upload**.
 1. In the **Upload blob** window, perform the following actions:
@@ -531,6 +567,10 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the **File Explorer** window, browse to **Allfiles (F):\\Allfiles\\Labs\\02\\Starter**, select the **settings.json** file, and then select **Open**.
     1. Ensure that the **Overwrite if files already exist** check box is selected, and then select **Upload**.
       > **Note**: Wait for the blob to upload before you continue with this lab.
+	
+	
+	
+	  ![01-02](../../Evidencias/mod02/MOD2_EXER5_TASK1_09.png)
 
 #### Task 2: Create a HTTP-triggered function
 
@@ -853,6 +893,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 #### Task 1: Open Azure Cloud Shell and list resource groups
 
 1.  In the Azure portal, select the **Cloud Shell** icon to open a new shell instance.
+    
     > **Note**: The **Cloud Shell** icon is represented by a greater than sign (\>) and underscore character (\_).
 1. If this is your first time opening Cloud Shell using your subscription, you can use the **Welcome to Azure Cloud Shell Wizard** to configure Cloud Shell for first-time usage. Perform the following actions in the wizard:
     1. A dialog box prompts you to configure the shell. Select **Bash**, review the selected subscription, and then select **Create storage**.

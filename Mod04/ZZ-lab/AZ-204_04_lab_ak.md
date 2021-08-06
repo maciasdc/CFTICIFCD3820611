@@ -7,7 +7,10 @@ lab:
     type: 'Answer Key'
 ---
 
+![01-02](mod04.png)
+
 # Lab 04: Constructing a polyglot data solution
+
 # Student lab answer key
 
 ## Microsoft Azure user interface
@@ -100,6 +103,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
+![01-02](../../Evidencias/mod03/MOD3_EXER1_TASK2_08.png)
+
 #### Task 3: Create an Azure Cosmos DB account resource
 
 1.  In the Azure portal's navigation pane, select **All services**.
@@ -140,7 +145,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
+1. In the Azure portal's navigation pane, select the **Resource groups** link.
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER1_TASK3_09.png)
 
 1.  From the **Resource groups** blade, find and then select the **PolyglotData** resource group that you created earlier in this lab.
 
@@ -148,7 +155,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  From the **Azure Cosmos DB account** blade, find the **Settings** section from the blade, and then select the **Keys** link.
 
-1.  In the Keys pane, record the value in the **PRIMARY CONNECTION STRING** text box. You'll use this value later in this lab.
+1. In the Keys pane, record the value in the **PRIMARY CONNECTION STRING** text box. You'll use this value later in this lab.
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER1_TASK3_14.png)
 
 #### Task 4: Create an Azure Storage account resource
 
@@ -188,6 +197,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
+![01-02](../../Evidencias/mod04/MOD3_EXER1_TASK4_08.png)
+
 #### Review
 
 In this exercise, you created all the Azure resources that you'll need for a polyglot data solution.
@@ -208,12 +219,14 @@ In this exercise, you created all the Azure resources that you'll need for a pol
 
 1.  In the **New container** ollowing actions:
     
-    1.  In the **Name** text box, enter **images**.
+    1. In the **Name** text box, enter **images**.
     
-    1.  In the **Public access level** drop-down list, select **Blob (anonymous read access for blobs only)**.
+    1. In the **Public access level** drop-down list, select **Blob (anonymous read access for blobs only)**.
     
-    1.  Select **Create**.
+    1. Select **Create**.
 
+       ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK1_06.png)
+    
 1.  Back in the **Containers** section, select the newly created **images** container.
 
 1.  From the **Container** blade, find the **Settings** section from the blade, and then select the **Properties** link.
@@ -234,6 +247,8 @@ In this exercise, you created all the Azure resources that you'll need for a pol
 
     > **Note**: Wait for all the blobs to upload before you continue with this lab.
 
+![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK1_12.png)
+
 #### Task 2: Upload an SQL .bacpac file
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
@@ -252,8 +267,10 @@ In this exercise, you created all the Azure resources that you'll need for a pol
     
     1.  In the **Public access level** drop-down list, select **Private (no anonymous access)**.
     
-    1.  Select **OK**.
+    1. Select **OK**.
 
+       ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK2_06.png)
+    
 1.  Back in the **Containers** section, select the newly created **databases** container.
 
 1.  From the **Container** blade, select **Upload**.
@@ -268,42 +285,49 @@ In this exercise, you created all the Azure resources that you'll need for a pol
 
     > **Note**: Wait for the blob to upload before you continue with this lab.
 
+![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK2_09.png)
+
 #### Task 3: Import an SQL database
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
 
 1.  From the **Resource groups** blade, find and select the **PolyglotData** resource group that you created earlier in this lab.
 
-1.  From the **PolyglotData** blade, select the **polysqlsrvr*[yourname]*** SQL server that you created earlier in this lab.
+1. From the **PolyglotData** blade, select the **polysqlsrvr*[yourname]*** SQL server that you created earlier in this lab.
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK3_03.png)
 
 1.  From the **SQL server** blade, select **Import database**.
 
 1.  From the **Import database** blade, perform the following actions:
 
-    1.  Leave the **Subscription** list set to its default value.
+    1. Leave the **Subscription** list set to its default value.
 
-    1.  Select the **Storage** option.
+    1. Select the **Storage** option.
 
-    1.  From the **Storage accounts** blade, select the **polystor*[yourname]*** storage account that you created earlier in this lab. 
+    1. From the **Storage accounts** blade, select the **polystor*[yourname]*** storage account that you created earlier in this lab. 
 
-    1.  From the **Containers** blade, select the **databases** container that you created earlier in this lab. 
+    1. From the **Containers** blade, select the **databases** container that you created earlier in this lab. 
 
-    1.  From the **Container** blade, select the **AdventureWorks.bacpac** blob that you created earlier in this lab, and then select **Select** to close the blade.
+    1. From the **Container** blade, select the **AdventureWorks.bacpac** blob that you created earlier in this lab, and then select **Select** to close the blade.
 
-    1.  Back from the **Import database** blade, leave the **Pricing tier** option set to its default value.
+       ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK4_05.png)
 
-    1.  In the **Database name** text box, enter **AdventureWorks**.
+       ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK3_05e.png)
 
-    1.  Leave the **Collation** text box set to its default value.
+    1. Back from the **Import database** blade, leave the **Pricing tier** option set to its default value.
 
-    1.  In the **Server admin login** text box, enter **testuser**.
+    1. In the **Database name** text box, enter **AdventureWorks**.
     
-    1.  In the **Password** text box, enter **TestPa55w.rd**.
+    1. Leave the **Collation** text box set to its default value.
+    
+    1. In the **Server admin login** text box, enter **testuser**.
+
+    1. In the **Password** text box, enter **TestPa55w.rd**.
     
     1.  Select **OK**.
-
-    > **Note**: Wait for the database to be created before you continue with this lab. If you receive a firewall-related error on the import step, it means you did not correctly configure the **Allow Azure services to access server** setting on your SQL Server earlier in the lab.  Review your settings, delete the empty **AdventureWorks** database, and then attempt your import again.
     
+    > **Note**: Wait for the database to be created before you continue with this lab. If you receive a firewall-related error on the import step, it means you did not correctly configure the **Allow Azure services to access server** setting on your SQL Server earlier in the lab.  Review your settings, delete the empty **AdventureWorks** database, and then attempt your import again.
 #### Task 4: Use an imported SQL database
 
 1.  In the Azure portal's navigation pane, select the **Resource groups** link.
@@ -344,29 +368,35 @@ In this exercise, you created all the Azure resources that you'll need for a pol
 
 1.  Find and select the **Query editor (preview)** link from the blade.
 
-1.  In the Query editor pane, perform the following actions:
+1. In the Query editor pane, perform the following actions:
 
-    1.  In the **Login** text box, enter **testuser**.
+   1. In the **Login** text box, enter **testuser**.
 
-    1.  In the **Password** text box, enter **TestPa55w.rd**.
+   1. In the **Password** text box, enter **TestPa55w.rd**.
 
-    1.  Select **OK**.
+   1. Select **OK**.
 
-1.  In the open query editor, enter the following query:
+      ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK4_13.png)
 
-    ```
-    SELECT * FROM AdventureWorks.dbo.Models
-    ```
+1. In the open query editor, enter the following query:
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK4_14.png)
+
+   ```
+   SELECT * FROM AdventureWorks.dbo.Models
+   ```
 
 1.  Select **Run** to run the query, and then observe the results.
 
     > **Note**: This query will return a list of models from the home page of the web application.
 
-1.  In the query editor, replace the existing query with the following query:
+1. In the query editor, replace the existing query with the following query:
 
-    ```
-    SELECT * FROM AdventureWorks.dbo.Products
-    ```
+   ![01-02](../../Evidencias/mod04/MOD3_EXER2_TASK4_16.png)
+
+   ```
+   SELECT * FROM AdventureWorks.dbo.Products
+   ```
 
 1.  Select **Run** to run the query, and then observe the results.
 
@@ -434,7 +464,9 @@ In this exercise, you imported all the resources that you'll use with your web a
 
 1.  Update the value of the **BlobContainerUrl** property by setting its value to the **URL** property of the Azure Storage blob container named **images** that you recorded earlier in this lab.
 
-1.  Save the **appsettings.json** file.
+1. Save the **appsettings.json** file.
+
+![01-02](../../Evidencias/mod04/MOD3_EXER3_TASK3_03.png)
 
 #### Task 4: Validate the web application
 
@@ -454,7 +486,9 @@ In this exercise, you imported all the resources that you'll use with your web a
 
     > **Note**: The **dotnet run** command will automatically build any changes to the project and then start the web application without a debugger attached. The command will output the URL of the running application and any assigned ports.
 
-1.  On the taskbar, select the **Microsoft Edge** icon.
+1. On the taskbar, select the **Microsoft Edge** icon.
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER3_TASK4_04.png)
 
 1.  In the open browser window, browse to the currently running web application (<http://localhost:5000>).
 
@@ -462,7 +496,9 @@ In this exercise, you imported all the resources that you'll use with your web a
 
 1.  Find the **Water Bottle** model, and then select **View Details**.
 
-1.  From the **Water Bottle** product detail page, find **Add to Cart**, and then observe that the checkout functionality is currently disabled.
+1. From the **Water Bottle** product detail page, find **Add to Cart**, and then observe that the checkout functionality is currently disabled.
+
+   ![01-02](../../Evidencias/mod04/MOD3_EXER3_TASK4_08.png)
 
 1.  Close the browser window displaying your web application.
 
@@ -494,13 +530,18 @@ In this exercise, you configured your ASP.NET web application to connect to your
 
     > **Note**: The **dotnet add reference** command will add a reference to the model classes contained in the **AdventureWorks.Models** project.
 
-1.  At the command prompt, enter the following command, and then select Enter to add a reference to the existing **AdventureWorks.Context** project:
+1. At the command prompt, enter the following command, and then select Enter to add a reference to the existing **AdventureWorks.Context** project:
 
-    ```
-    dotnet add .\AdventureWorks.Migrate\AdventureWorks.Migrate.csproj reference .\AdventureWorks.Context\AdventureWorks.Context.csproj
-    ```
+   
 
-    > **Note**: The **dotnet add reference** command will add a reference to the context classes contained in the **AdventureWorks.Context** project.
+   ```
+   dotnet add .\AdventureWorks.Migrate\AdventureWorks.Migrate.csproj reference .\AdventureWorks.Context\AdventureWorks.Context.csproj
+   
+   ```
+
+   > **Note**: The **dotnet add reference** command will add a reference to the context classes contained in the **AdventureWorks.Context** project.
+   >
+   > 
 
 1.  At the command prompt, enter the following command, and then select Enter to switch your terminal context to the **AdventureWorks.Migrate** folder:
 

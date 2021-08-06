@@ -7,6 +7,9 @@ lab:
     type: 'Answer Key'
 ---
 
+
+![01-02](mod03.png)
+
 # Lab 03: Retrieving Azure Storage resources and metadata by using the Azure Storage SDK for .NET
 # Student lab answer key
 
@@ -86,9 +89,11 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  On the **Review + Create** tab, review the options that you selected during the previous steps.
 
-1.  Select **Create** to create the storage account by using your specified configuration. 
+1. Select **Create** to create the storage account by using your specified configuration. 
 
-    > **Note**: Wait for the creation task to complete before you move forward with this lab.
+   ![01-02](../../Evidencias/mod03/MOD3_EXER1_TASK2_08.png)
+
+   > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 1.  In the Azure portal's navigation pane, select **All services**.
 
@@ -98,19 +103,22 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.  On the **Storage account** blade, find the **Settings** section, and then select the **Properties** link.
 
-1.  In the **Properties** section, record the value of the **Primary Blob Service Endpoint** text box.
+1. In the **Properties** section, record the value of the **Primary Blob Service Endpoint** text box.
 
-    > **Note**: You'll use this value later in the lab.
+   ![01-02](../../Evidencias/mod03/MOD3_EXER1_TASK2_13.png)
+
+   > **Note**: You'll use this value later in the lab.
 
 1.  Still on the **Storage account** blade, find the **Settings** section, and then select the **Access keys** link.
 
 1.  In the **Access keys** section, perform the following actions:
 
     1.  Record the value in the **Storage account name** text box.
-    
     1.  Select any one of the keys, and then record the value in either of the **Key** boxes.
+    
+> **Note**: All these values will be used later in this lab.
 
-    > **Note**: All these values will be used later in this lab.
+![01-02](../../Evidencias/mod03/MOD3_EXER1_TASK2_15.png)
 
 #### Review
 
@@ -120,15 +128,15 @@ In this exercise, you created a new Storage account to use throughout the remain
 
 #### Task 1: Create storage account containers
 
-1.  In the Azure portal's navigation pane, select the **Resource groups** link.
+1. In the Azure portal's navigation pane, select the **Resource groups** link.
 
-1.  On the **Resource groups** blade, find and then select the **StorageMedia** resource group that you created earlier in this lab.
+1. On the **Resource groups** blade, find and then select the **StorageMedia** resource group that you created earlier in this lab.
 
-1.  On the **StorageMedia** blade, select the **mediastor*[yourname]*** storage account that you created earlier in this lab.
+1. On the **StorageMedia** blade, select the **mediastor*[yourname]*** storage account that you created earlier in this lab.
 
-1.  On the **Storage account** blade, select the **Containers** link in the **Blob service** section.
+1. On the **Storage account** blade, select the **Containers** link in the **Blob service** section.
 
-1.  In the **Containers** section, select **+ Container**.
+1. In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up window, perform the following actions:
     
@@ -136,7 +144,7 @@ In this exercise, you created a new Storage account to use throughout the remain
     
     1.  In the **Public access level** drop-down list, select **Private (no anonymous access)**, and then select **OK**.
 
-1.  Back in the **Containers** section, select **+ Container**.
+1. Back in the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up window, perform the following actions:
     
@@ -144,7 +152,9 @@ In this exercise, you created a new Storage account to use throughout the remain
     
     1.  In the **Public access level** drop-down list, select **Private (no anonymous access)**, and then select **OK**.
 
-1.  Back in the **Containers** section, observe the updated list of containers.
+1. Back in the **Containers** section, observe the updated list of containers.
+
+   ![01-02](../../Evidencias/mod03/MOD3_EXER2_TASK1_09.png)
 
 #### Task 2: Upload a storage account blob
 
@@ -169,6 +179,8 @@ In this exercise, you created a new Storage account to use throughout the remain
     1.  Ensure that the **Overwrite if files already exist** check box is selected, and then select **Upload**. 
     
     > **Note**: Wait for the blob to upload before you continue with this lab.
+
+![01-02](../../Evidencias/mod03/MOD3_EXER2_TASK2_07.png)
 
 #### Review
 
@@ -202,11 +214,13 @@ In this exercise, you created a couple of placeholder containers in the storage 
 
     > **Note**: The **dotnet add package** command will add the **Azure.Storage.Blobs** package from NuGet. For more information, go to [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0).
 
-1.  At the command prompt, enter the following command, and then select Enter to build the .NET web application:
+1. At the command prompt, enter the following command, and then select Enter to build the .NET web application:
 
-    ```
-    dotnet build
-    ```
+   ![01-02](../../Evidencias/mod03/MOD3_EXER3_TASK1_07.png)
+
+   ```
+   dotnet build
+   ```
 
 1.  Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
@@ -237,7 +251,7 @@ In this exercise, you created a couple of placeholder containers in the storage 
     public class Program
     {
     }
-    ``` 
+    ```
 
 1.  In the **Program** class, enter the following line of code to create a new string constant named **blobServiceEndpoint**:
 
@@ -273,19 +287,21 @@ In this exercise, you created a couple of placeholder containers in the storage 
 
 1.  Observe the **Program.cs** file, which should now include:
 
+    ![01-02](../../Evidencias/mod03/MOD3_EXER3_TASK2_13.png)
+    
     ```
     using Azure.Storage;
     using Azure.Storage.Blobs;
     using Azure.Storage.Blobs.Models;
     using System;
     using System.Threading.Tasks;
-
+    
     public class Program
     {
         private const string blobServiceEndpoint = "<primary-blob-service-endpoint>";
         private const string storageAccountName = "<storage-account-name>";
         private const string storageAccountKey = "<key>";
-
+    
         public static async Task Main(string[] args)
         {
         }
@@ -366,9 +382,13 @@ In this exercise, you created a couple of placeholder containers in the storage 
 
     > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
 
-1.  Observe the output from the currently running console application. The output contains metadata for the Storage account that was retrieved from the service.
+1. Observe the output from the currently running console application. The output contains metadata for the Storage account that was retrieved from the service.
 
-1.  Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
+   ![01-02](../../Evidencias/mod03/MOD3_EXER3_TASK3_12.png)
+
+1. Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
+
+   
 
 #### Task 4: Enumerate the existing containers
 
@@ -435,7 +455,9 @@ In this exercise, you created a couple of placeholder containers in the storage 
 
     > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
 
-1.  Observe the output from the currently running console application. The updated output includes a list of every existing container in the account.
+1. Observe the output from the currently running console application. The updated output includes a list of every existing container in the account.
+
+   ![01-02](../../Evidencias/mod03/MOD3_EXER3_TASK4_10.png)
 
 1.  Select **Kill Terminal** or the **Recycle Bin** icon to close the currently open terminal and any associated processes.
 
@@ -523,7 +545,9 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
     }
     ```
 
-1.  Save the **Program.cs** file.
+1. Save the **Program.cs** file.
+
+   ![01-02](../../Evidencias/mod03/MOD3_EXER4_TASK1_10.png)
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
@@ -571,7 +595,7 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
 
     ```
     return container;
-    ```  
+    ```
 
 1.  Observe the **GetContainerAsync** method, which should now include:
 
@@ -621,13 +645,15 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-1.  At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
+1. At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
 
-    ```
-    dotnet run
-    ```
+   ![01-02](../../Evidencias/mod03/MOD3_EXER4_TASK2_12.png)
 
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
+   ```
+   dotnet run
+   ```
+
+   > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
 
 1.  Observe the output from the currently running console application. The updated output includes metadata about the existing container and blobs.
 
@@ -656,6 +682,8 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
     1.  Ensure that the **Overwrite if files already exist** check box is selected, and then select **Upload**. 
     
     > **Note**: Wait for the blob to upload before you continue with this lab.
+
+![01-02](../../Evidencias/mod03/MOD3_EXER4_TASK3_07.png)
 
 #### Task 4: Access blob URI by using the SDK
 
@@ -740,13 +768,15 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-1.  At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
+1. At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
 
-    ```
-    dotnet run
-    ```
+   ![01-02](../../Evidencias/mod03/MOD3_EXER4_TASK4_12.png)
 
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
+   ```
+   dotnet run
+   ```
+
+   > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\BlobManager** folder.
 
 1.  Observe the output from the currently running console application. The updated output includes the final URL to access the blob online. Record the value of this URL to use later in the lab.
 
@@ -756,11 +786,13 @@ In this exercise, you accessed existing containers by using the Azure Storage SD
 
 #### Task 5: Test the URI by using a browser
 
-1.  On the taskbar, right-click the **Microsoft Edge** icon or activate the shortcut menu, and then select **New window**.
+1. On the taskbar, right-click the **Microsoft Edge** icon or activate the shortcut menu, and then select **New window**.
 
-1.  In the new browser window, go to the URL that you copied for the blob earlier in this lab.
+1. In the new browser window, go to the URL that you copied for the blob earlier in this lab.
 
-1.  You should now notice the Scalable Vector Graphic (SVG) file in your browser window.
+1. You should now notice the Scalable Vector Graphic (SVG) file in your browser window.
+
+   ![01-02](../../Evidencias/mod03/MOD3_EXER4_TASK5_00.png)
 
 #### Review
 

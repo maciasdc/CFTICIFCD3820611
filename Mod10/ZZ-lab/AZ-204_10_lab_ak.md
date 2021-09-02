@@ -86,7 +86,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
         
     1.  Select **Review + Create**.
 
-1.  On the **Review + Create** tab, review the options that you specified in the previous steps.
+1. On the **Review + Create** tab, review the options that you specified in the previous steps.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER1_TASK2_07.png)
 
 1.  Select **Create** to create the storage account by using your specified configuration.
 
@@ -94,7 +96,9 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 
 1.	Select the **Go to resource** button on the **Deployment** blade to go to the newly created storage account.
 
-1.	On the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
+1. On the **Storage account** blade, find the **Settings** section, and then select **Access keys**.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER1_TASK2_10.png)
 
 1.	On the **Access keys** blade, select any one of the keys, and then record the value of either of the **Connection string** boxes. You'll use this value later in this lab.
 
@@ -116,21 +120,25 @@ In this exercise, you created a new Azure Storage account that you'll use throug
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-1.  At the open command prompt, enter the following command, and then select Enter to create a new .NET project named **MessageProcessor** in the current folder:
+1. At the open command prompt, enter the following command, and then select Enter to create a new .NET project named **MessageProcessor** in the current folder:
 
-    ```
-    dotnet new console --name MessageProcessor --output .
-    ```
+   ```
+   dotnet new console --name MessageProcessor --output .
+   ```
 
-    > **Note**: The **dotnet new** command will create a new **console** project in a folder with the same name as the project.
+   > **Note**: The **dotnet new** command will create a new **console** project in a folder with the same name as the project.
 
-1.  At the command prompt, enter the following command, and then select Enter to import version 12.0.0 of **Azure.Storage.Queues** from NuGet:
+   ![01-02](../../Evidencias/mod10/MOD2_EXER2_TASK1_05.png)
 
-    ```
-    dotnet add package Azure.Storage.Queues --version 12.0.0
-    ```
+1. At the command prompt, enter the following command, and then select Enter to import version 12.0.0 of **Azure.Storage.Queues** from NuGet:
 
-    > **Note**: The **dotnet add package** command will add the **Azure.Storage.Queues** package from NuGet. For more information, go to [Azure.Storage.Queues](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0).
+   ```
+   dotnet add package Azure.Storage.Queues --version 12.0.0
+   ```
+
+   > **Note**: The **dotnet add package** command will add the **Azure.Storage.Queues** package from NuGet. For more information, go to [Azure.Storage.Queues](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0).
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER2_TASK1_06.png)
 
 1.  At the command prompt, enter the following command, and then select Enter to build the .NET web application:
 
@@ -168,7 +176,7 @@ In this exercise, you created a new Azure Storage account that you'll use throug
     public class Program
     {
     }
-    ``` 
+    ```
 
 1.  In the **Program** class, enter the following line of code to create a new string constant named **storageConnectionString**:
 
@@ -201,17 +209,19 @@ In this exercise, you created a new Azure Storage account that you'll use throug
     using System;
     using System.Text;
     using System.Threading.Tasks;
-
+    
     public class Program
     {
         private const string storageConnectionString = "<storage-connection-string>";
         private const string queueName = "messagequeue";
-
+    
         public static async Task Main(string[] args)
         {
         }
     }
     ```
+
+![01-02](../../Evidencias/mod10/MOD2_EXER2_TASK2_10.png)
 
 #### Task 3: Validate Azure Storage access
 
@@ -256,13 +266,19 @@ In this exercise, you created a new Azure Storage account that you'll use throug
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-1.  At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
+1. At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor** folder.
+   > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor** folder.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER2_TASK3_08.png)
+
+   -
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER2_TASK3_08b.png)
 
 1.  Observe the output from the currently running console application. The output contains metadata for the queue endpoint.
 
@@ -332,25 +348,27 @@ In this exercise, you configured your .NET project to access the Storage service
         Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
         ```
 
-1.  Observe the **Main** method, which should now include:
+1. Observe the **Main** method, which should now include:
 
-    ```
-    public static async Task Main(string[] args)
-    {
-        // Existing code removed for brevity
+   ```
+   public static async Task Main(string[] args)
+   {
+       // Existing code removed for brevity
+   
+       Console.WriteLine($"---Existing Messages---");
+       int batchSize = 10;
+       TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
+       
+       Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
+   
+       foreach(QueueMessage message in messages?.Value)
+       {
+           Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
+       }
+   }
+   ```
 
-        Console.WriteLine($"---Existing Messages---");
-        int batchSize = 10;
-        TimeSpan visibilityTimeout = TimeSpan.FromSeconds(2.5d);
-        
-        Response<QueueMessage[]> messages = await client.ReceiveMessagesAsync(batchSize, visibilityTimeout);
-
-        foreach(QueueMessage message in messages?.Value)
-        {
-            Console.WriteLine($"[{message.MessageId}]\t{message.MessageText}");
-        }
-    }
-    ```
+   ![01-02](../../Evidencias/mod10/MOD2_EXER3_TASK1_05.png)
 
 1.  Save the **Program.cs** file.
 
@@ -416,7 +434,9 @@ In this exercise, you configured your .NET project to access the Storage service
 
 1.  In the **Queues** node, open the **messagequeue** queue that you created earlier in this lab by using .NET code.
 
-1.  On the **messagequeue** tab, select **Add Message**.
+1. On the **messagequeue** tab, select **Add Message**.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER3_TASK2_15.png)
 
 1.  In the **Add Message** pop-up window, perform the following actions:
 
@@ -432,13 +452,15 @@ In this exercise, you configured your .NET project to access the Storage service
 
 1.  Return to the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
-1.  At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
+1. At the open command prompt, enter the following command, and then select Enter to run the .NET web application:
 
-    ```
-    dotnet run
-    ```
+   ```
+   dotnet run
+   ```
 
-    > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor** folder.
+   > **Note**: If there are any build errors, review the **Program.cs** file in the **Allfiles (F):\\Allfiles\\Labs\\10\\Solution\\MessageProcessor** folder.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER3_TASK2_18.png)
 
 1.  Observe the output from the currently running console application. The output includes the new message that you created.
 
@@ -478,7 +500,9 @@ In this exercise, you configured your .NET project to access the Storage service
     }
     ```
 
-1.  **Save** the **Program.cs** file.
+1. **Save** the **Program.cs** file.
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER3_TASK3_05.png)
 
 1.  In the **Visual Studio Code** window, right-click or activate the shortcut menu for the Explorer pane, and then select **Open in Terminal**.
 
@@ -542,20 +566,22 @@ In this exercise, you read and deleted existing messages from the Storage queue 
         Console.WriteLine($"Sent Message:\t{greeting}");        
         ```
 
-1.  Observe the **Main** method, which should now include:
+1. Observe the **Main** method, which should now include:
 
-    ```
-    public static async Task Main(string[] args)
-    {
-        // Existing code removed for brevity
-        
-        Console.WriteLine($"---New Messages---");
-        string greeting = "Hi, Developer!";
-        await client.SendMessageAsync(Convert.ToBase64String(Encoding.UTF8.GetBytes(greeting)));
-        
-        Console.WriteLine($"Sent Message:\t{greeting}");
-    }
-    ```
+   ```
+   public static async Task Main(string[] args)
+   {
+       // Existing code removed for brevity
+       
+       Console.WriteLine($"---New Messages---");
+       string greeting = "Hi, Developer!";
+       await client.SendMessageAsync(Convert.ToBase64String(Encoding.UTF8.GetBytes(greeting)));
+       
+       Console.WriteLine($"Sent Message:\t{greeting}");
+   }
+   ```
+
+   ![01-02](../../Evidencias/mod10/MOD2_EXER4_TASK1_05.png)
 
 1.  **Save** the **Program.cs** file.
 
@@ -588,6 +614,8 @@ In this exercise, you read and deleted existing messages from the Storage queue 
 #### Review
 
 In this exercise, you created new messages in the queue by using the .NET library for Storage queues.
+
+
 
 ### Exercise 5: Clean up your subscription 
 

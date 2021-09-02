@@ -46,18 +46,23 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. In the open browser window, go to the **Azure portal** (<https://portal.azure.com>).
 1. Enter the email address for your Microsoft account, and then select **Next**.
 1. Enter the **password** for your Microsoft account, and then select **Sign in**.
-    
+   
     > **Note**: If this is your first time signing in to the Azure portal, you will be offered a tour of the portal. If you prefer to skip the tour, select **Get Started** to begin using the portal.
 
 #### Task 2: Create an Azure Storage account
 
 1. In the Azure portal's navigation pane, select **All services**.
+
 1. From the **All services** blade, select **Storage Accounts**.
+
 1. From the **Storage accounts** blade, find your list of Storage instances.
+
 1. From the **Storage accounts** blade, select **New**.
+
 1. Find the tabs from the **Create storage account** blade, such as **Basics**.
-    
+   
     > **Note**: Each tab represents a step in the workflow to create a new storage account. You can select **Review + Create** at any time to skip the remaining tabs.
+    
 1. From the **Basics** tab, perform the following actions:
     1. Leave the **Subscription** text box set to its default value.
     1. In the **Resource group** section, select **Create new**, enter **ConfidentialStack**, and then select **OK**.
@@ -67,28 +72,45 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the **Account kind** drop-down list, select **StorageV2 (general purpose v2)**.
     1. In the **Replication** drop-down list, select **Locally-redundant storage (LRS)**.
     1. Select **Review + Create**.
+    
 1. From the **Review + Create** tab, review the options that you selected during the previous steps.
+
 1. Select **Create** to create the storage account by using your specified configuration.
-    
+   
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
-1. In the Azure portal's navigation pane, select **All services**.
-1. From the **All services** blade, select **Storage Accounts**.
-1. From the **Storage accounts** blade, select the **securestor[yourname]** storage account that you created earlier in this lab.
-1. From the **Storage account** blade, find the **Settings** section, and then select the **Access keys** link.
-1. From the **Access keys** blade, select any one of the keys and record the value in either of the **Connection string** boxes. You'll use this value later in this lab.
     
+    ![01-02](../../Evidencias/mod07/MOD7_EXER1_TASK2_8.png)
+    
+1. In the Azure portal's navigation pane, select **All services**.
+
+1. From the **All services** blade, select **Storage Accounts**.
+
+1. From the **Storage accounts** blade, select the **securestor[yourname]** storage account that you created earlier in this lab.
+
+1. From the **Storage account** blade, find the **Settings** section, and then select the **Access keys** link.
+
+1. From the **Access keys** blade, select any one of the keys and record the value in either of the **Connection string** boxes. You'll use this value later in this lab.
+   
     > **Note**: It doesn't matter which connection string you choose. They are interchangeable.
 
 #### Task 3: Create an Azure Key Vault
 
 1. In the Azure portal's navigation pane, select the **Create a resource** link.
+
 1. From the **New** blade, find the **Search the Marketplace** text box above the list of featured services.
+
 1. In the search box, enter **Key Vault**, and then select Enter.
+
 1. From the **Marketplace** search results blade, select the **Key Vault** result.
+
 1. From the **Key Vault** blade, select **Create**.
+
+    ![01-02](../../Evidencias/mod07/MOD7_EXER1_TASK3_5.png)
+
 1. Find the tabs from the **Create key vault** blade, such as **Basics**.
-    
+   
     > **Note**: Each tab represents a step in the workflow to create a new key vault. You can select **Review + Create** at any time to skip the remaining tabs.
+    
 1. From the **Basics** tab, perform the following actions:
     1. Leave the **Subscription** text box set to its default value.
     1. In the **Resource group** section, select **Use existing**, and then select **ConfidentialStack** in the list.
@@ -96,9 +118,13 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the **Region** drop-down list, select the **East US** region.
     1. In the **Pricing tier** drop-down list, select **Standard**.
     1. Select **Review + Create**.
-1. From the **Review + Create** tab, review the options that you selected during the previous steps.
-1. Select **Create** to create the key vault by using your specified configuration.
     
+1. From the **Review + Create** tab, review the options that you selected during the previous steps.
+
+    ![01-02](../../Evidencias/mod07/MOD7_EXER1_TASK3_08.png)
+
+1. Select **Create** to create the key vault by using your specified configuration.
+   
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 #### Task 4: Create an Azure Functions app
@@ -109,7 +135,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. From the **Marketplace** search results blade, select the **Function App** result.
 1. From the **Function App** blade, select **Create**.
 1. Find the tabs from the **Function App** blade, such as **Basics**.
-    
+   
     > **Note**: Each tab represents a step in the workflow to create a new function app. You can select **Review + Create** at any time to skip the remaining tabs.
 1. From the **Basics** tab, perform the following actions:
     1. Leave the **Subscription** text box set to its default value.
@@ -122,15 +148,24 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. Select **Next: Hosting**.
 1. From the **Hosting** tab, perform the following actions:
     1. In the **Operating System** section, select **Linux**.
+    
     1. In the **Storage account** drop-down list, set the default storage account that you created earlier in this lab.
+    
     1. In the **Plan type** drop-down list, select the **Consumption (Serverless)** option.
+    
     1. Select **Review + Create**.
+    
+       
 1. From the **Review + Create** tab, review the options that you selected during the previous steps.
 1. Select **Create** to create the function app by using your specified configuration.
-    
+   
     > **Note**: Wait for the creation task to complete before you move forward with this lab.
 
 > **Review**: In this exercise, you created all the resources that you'll use for this lab.
+
+![01-02](../../Evidencias/mod07/MOD7_EXER1_TASK4_10.png)
+
+![01-02](../../Evidencias/mod07/MOD7_EXER1_TASK4_10B.png)
 
 ### Exercise 2: Configure secrets and identities
 
@@ -145,13 +180,20 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. In the confirmation dialog box, select **Yes**.
     > **Note**: Wait for the system-assigned managed identity to be created before you move forward with this lab.
 
+![01-02](../../Evidencias/mod07/MOD7_EXER2_TASK1_05.png)
+
 #### Task 2: Create a Key Vault secret
 
 1. In the Azure portal's navigation pane, select the **Resource groups** link.
+
 1. From the **Resource groups** blade, find and then select the **ConfidentialStack** resource group that you created earlier in this lab.
+
 1. From the **ConfidentialStack** blade, select the **securevault[yourname]** key vault that you created earlier in this lab.
+
 1. From the **Key Vault** blade, select the **Secrets** link in the **Settings** section.
+
 1. In the **Secrets** pane, select **Generate/Import**.
+
 1. From the **Create a secret** blade, perform the following actions:
     1. In the **Upload options** drop-down list, select **Manual**.
     1. In the **Name** text box, enter **storagecredentials**.
@@ -159,10 +201,16 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. Leave the **Content Type** text box set to its default value.
     1. Leave the **Set activation date** text box set to its default value.
     1. Leave the **Set expiration date** text box set to its default value.
+    1. ![01-02](../../Evidencias/mod07/MOD7_EXER2_TASK2_06.png)
     1. In the **Enabled** section, select **Yes**, and then select **Create**.
     > **Note**: Wait for the secret to be created before you move forward with this lab.
+    
 1. Return to the Secrets pane, and then select the **storagecredentials** item in the list.
+
 1. In the Versions pane, select the latest version of the **storagecredentials** secret.
+
+    
+
 1. In the Secret Version pane, perform the following actions:
     1. Find the metadata for the latest version of the secret.
     1. Select **Show secret value** to find the value of the secret.
@@ -172,23 +220,33 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 #### Task 3: Configure a Key Vault access policy
 
 1. In the Azure portal's navigation pane, select the **Resource groups** link.
+
 1. From the **Resource groups** blade, find and then select the **ConfidentialStack** resource group that you created earlier in this lab.
+
 1. From the **ConfidentialStack** blade, select the **securevault[yourname]** key vault that you created earlier in this lab.
+
 1. From the **Key Vault** blade, select the **Access policies** link in the **Settings** section.
+
 1. In the Access policies pane, select **Add Access Policy**.
+
 1. From the **Add access policy** blade, perform the following actions:
     1. Select the **Select principal** link.
     1. From the **Principal** blade, find and then select the service principal named **securefunc[yourname]**, and then select **Select**.
-        
+       
         > **Note**: The system-assigned managed identity you created earlier in this lab will have the same name as the Azure Function resource.
     1. Leave the **Key permissions** list set to its default value.
     1. In the **Secret permissions** drop-down list, select the **GET** permission.
     1. Leave the **Certificate permissions** list set to its default value.
     1. Leave the **Authorized application** text box set to its default value.
     1. Select **Add**.
-1. Back in the Access policies pane, select **Save**.
     
+    ![01-02](../../Evidencias/mod07/MOD7_EXER2_TASK3_06.png)
+    
+1. Back in the Access policies pane, select **Save**.
+   
     > **Note**: Wait for your changes to the access policies to save before you move forward with this lab.
+
+![01-02](../../Evidencias/mod07/MOD7_EXER2_TASK3_07.png)
 
 #### Task 4: Create a Key Vault-derived application setting
 
@@ -200,7 +258,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     1. Select the **Application settings** tab, and then select **New application setting**.
     1. In the **Add/Edit application setting** pop-up window, in the **Name** text box, enter **StorageConnectionString**.
     1. In the **Value** text box, construct a value by using the following syntax: ``@Microsoft.KeyVault(SecretUri=*Secret Identifier*)``
-        
+       
         > **Note**: You'll need to build a reference to your ***Secret Identifier*** by using the above syntax. For example, if your secret identifier is ``https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf``, your value would be ``@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)``.
     1. Leave the **deployment slot setting** text box set to its default value.
     1. Select **OK** to close the pop-up window and return to the **Configuration** section.
@@ -209,6 +267,8 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     > **Note**: Wait for your application settings to save before you move forward with the lab.
 
 > **Review**: In this exercise, you created a system-assigned managed service identity for your function app and then gave that identity the appropriate permissions to get the value of a secret in your key vault. Finally, you created a secret that you referenced within your function app's configuration settings.
+
+![01-02](../../Evidencias/mod07/MOD7_EXER2_TASK4_05.png)
 
 ### Exercise 3: Build an Azure Functions app
 
@@ -576,7 +636,7 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
 1. On the taskbar, right-click the **Microsoft Edge** icon or activate the shortcut menu, and then select **New window**.
 1. In the new browser window, go to the URL that you copied for the blob.
 1. An error message indicating that the resource wasn't found should now display.
-    
+   
     > **Note**: If the error message doesn't display, your browser might have cached the file. Press Ctrl+F5 to refresh the page until the error message displays.
 
 #### Task 2: Pull and configure the Azure SDK for .NET
